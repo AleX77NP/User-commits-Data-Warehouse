@@ -22,8 +22,9 @@ class DataWarehouseHandler:
         self.save()
 
     def insert_commit(self, commit):
-        commit_data = (commit['commit_text'], commit['commit_hash'], commit['commit_time'])
-        sql = ''' INSERT INTO USER_COMMIT (Commit_Text, Commit_Hash, Commit_Time) VALUES (?, ?, ?) '''
+        commit_data = (commit['commit_text'], commit['commit_hash'], commit['commit_time'], commit['user_key'],
+                       commit['repo_key'])
+        sql = '''INSERT INTO USER_COMMIT (Commit_Text, Commit_Hash, Commit_Time, User_Key, Repo_Key) VALUES (?, ?, 
+        ?, ?, ?) '''
         self.cursor.execute(sql, commit_data)
         self.save()
-

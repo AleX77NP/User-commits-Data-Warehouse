@@ -6,7 +6,7 @@ dwh = DataWarehouseHandler()
 
 def insert_users():
     uh = UserHandler("https://random-data-api.com/api/v2/users")
-    for i in range(10):
+    for i in range(50):
         user = uh.get_user()
         dwh.insert_user(user)
 
@@ -18,5 +18,5 @@ def insert_repos():
         dwh.insert_repo(repo)
 
 
-# insert_users()
-# insert_repos()
+insert_users()
+insert_repos()

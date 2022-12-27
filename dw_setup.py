@@ -10,14 +10,14 @@ cursor_obj.execute("DROP TABLE IF EXISTS USER_COMMIT")
 
 user_table = """ CREATE TABLE USER (
                  User_Key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                 User_Email VARCHAR(50) NOT NULL,
-                 User_Alias VARCHAR(20) NOT NULL,
+                 User_Email VARCHAR(50) UNIQUE NOT NULL,
+                 User_Alias VARCHAR(20) UNIQUE NOT NULL,
                  Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
             ); """
 
 repo_table = """ CREATE TABLE REPO (
                  Repo_Key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                 Repo_Name VARCHAR(50) NOT NULL,
+                 Repo_Name VARCHAR(50) UNIQUE NOT NULL,
                  Repo_Owner VARCHAR(20) NOT NULL,
                  Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
             ); """

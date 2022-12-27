@@ -1,5 +1,6 @@
 import requests
 import datetime
+from random import randrange
 
 
 class DataHandler:
@@ -56,13 +57,9 @@ class CommitHandler(DataHandler):
         commit = {
             'commit_text': data,
             'commit_hash': data.encode().hex()[0:40],
-            'commit_time': datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+            'commit_time': datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
+            'user_key': randrange(1, 50),  # number of users in DB
+            'repo_key': randrange(1, 10)  # number of repos in DB
         }
         return commit
 
-# uh = UserHandler("https://random-data-api.com/api/v2/users")
-# print(uh.get_user())
-# rh = RepoHandler("https://random-word-api.herokuapp.com/word")
-# print(rh.get_repo())
-# ch = CommitHandler("https://whatthecommit.com/index.txt")
-# print(len(ch.get_commit()['commit_hash']))
