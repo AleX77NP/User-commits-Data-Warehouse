@@ -25,8 +25,9 @@ repo_table = """ CREATE TABLE REPO (
 
 user_commit_table = """ CREATE TABLE USER_COMMIT (
                         Commit_Key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                        Commit_Hash CHAR(40) NOT NULL,
                         Commit_Text VARCHAR(100) NOT NULL,
+                        Commit_Hash CHAR(40) NOT NULL,
+                        Commit_Time TEXT NOT NULL,
                         Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
                         User_Key INTEGER NOT NULL,
                         Repo_Key INTEGER NOT NULL,

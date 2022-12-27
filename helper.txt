@@ -1,0 +1,5 @@
+COUCHDB:
+- docker run -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=<password> -d couchdb
+
+AIRFLOW:
+- export AIRFLOW_HOME=$(pwd)

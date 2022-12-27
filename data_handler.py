@@ -1,4 +1,5 @@
 import requests
+import datetime
 
 
 class DataHandler:
@@ -33,19 +34,6 @@ class UserHandler(DataHandler):
         return user
 
 
-class CommitHandler(DataHandler):
-    def __init__(self, url):
-        DataHandler.__init__(self, url)
-
-    def get_commit(self):
-        data = self.fetch_text_data()
-        commit = {
-            'commit_text': data,
-            'commit_hash': data.encode().hex()[0:40]
-        }
-        return commit
-
-
 class RepoHandler(DataHandler):
     def __init__(self, url):
         DataHandler.__init__(self, url)
@@ -54,14 +42,27 @@ class RepoHandler(DataHandler):
         data = self.fetch_json_data()
         repo = {
             'repo_name': data[0],
-            'repo_owner': 'AleX77NP'
+            'repo_owner': 'AleX77NP',
         }
         return repo
 
 
+class CommitHandler(DataHandler):
+    def __init__(self, url):
+        DataHandler.__init__(self, url)
+
+    def get_commit(self):
+        data = self.fetch_text_data()
+        commit = {
+            'commit_text': data,
+            'commit_hash': data.encode().hex()[0:40],
+            'commit_time': datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+        }
+        return commit
+
 # uh = UserHandler("https://random-data-api.com/api/v2/users")
 # print(uh.get_user())
-# ch = CommitHandler("https://whatthecommit.com/index.txt")
-# print(len(ch.get_commit()['commit_hash']))
 # rh = RepoHandler("https://random-word-api.herokuapp.com/word")
 # print(rh.get_repo())
+# ch = CommitHandler("https://whatthecommit.com/index.txt")
+# print(len(ch.get_commit()['commit_hash']))
