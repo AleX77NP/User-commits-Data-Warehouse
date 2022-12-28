@@ -26,4 +26,4 @@ Technologies used: Python, Sqlite, Apache CouchDB, Apache Airflow
 ## Notes:
 Since data is randomly generated, there are no checks if user/repo/branch already exists.
 This is just a simple example to show how to schedule pipeline with Airflow and implement basic 
-extract, transform and load operations.
+extract, transform and load operations, as well as data modeling.
