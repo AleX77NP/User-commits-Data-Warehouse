@@ -7,6 +7,8 @@ Pipeline consists of following tasks:
 1. extract (CouchDB used for staging)
 2. transform
 3. load into Data Warehouse
+
+Technologies used: Python, Sqlite, Apache CouchDB, Apache Airflow
 # STEPS:
 - create virtual environment 
 - download dependencies
@@ -20,3 +22,8 @@ Pipeline consists of following tasks:
 - open current directory in two terminal windows run `airflow schuduler` in one and `airflow webserver` in other
 - go to `localhost:8080` and login with the user credentials you just created
 - you should be able to see `commits_dag` there
+
+## Notes:
+Since data is randomly generated, there are no checks if user/repo/branch already exists.
+This is just a simple example to show how to schedule pipeline with Airflow and implement basic 
+extract, transform and load operations.
