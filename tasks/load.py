@@ -51,7 +51,7 @@ def LoadToDW():
 
             # commit
             commit_data = commit_doc.get('commit')
-            commit = {
+            commit_fact = {
                 'commit_message': commit_data.get('commit_message'),
                 'commit_hash': commit_data.get('commit_hash'),
                 'commit_line_diff': commit_data.get('commit_line_diff'),
@@ -61,6 +61,14 @@ def LoadToDW():
                 'branch_key': branch_key,
                 "date_key": date_key
             }
+
+            dwh.insert_user(user)
+            dwh.insert_repo(repo)
+            dwh.insert_branch(branch)
+            dwh.insert_date(date)
+            dwh.insert_commit_fact(commit_fact)
+
+            dwh.save()
 
         except BaseException as e:
             print("ERROR: ", e)
