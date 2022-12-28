@@ -3,6 +3,10 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/logs/scheduler/2022-12-27" />
+      <excludeFolder url="file://$MODULE_DIR$/logs/scheduler/2022-12-28" />
+      <excludeFolder url="file://$MODULE_DIR$/logs/dag_id=commits_dag" />
+      <excludeFolder url="file://$MODULE_DIR$/logs/dag_processor_manager" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
