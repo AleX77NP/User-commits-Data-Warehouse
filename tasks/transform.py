@@ -7,7 +7,7 @@ def transform(message):
     return commit_message
 
 
-@task(task_id='transform')
+@task(task_id="transform")
 def TransformData():
     ch = CouchHandler()
     for idx in ch.db:

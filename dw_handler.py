@@ -22,16 +22,16 @@ class DataWarehouseHandler:
         self.save()
 
     def insert_branch(self, branch):
-        repo_data = (branch['branch_key'], branch['branch_name'])
-        sql = ''' INSERT INTO BRANCH_DIM (Branch_Key, Branch_Name) VALUES (?, ?) '''
-        self.cursor.execute(sql, repo_data)
+        branch_data = (branch['branch_key'], branch['branch_name'])
+        sql = ''' INSERT INTO BRANCH_DIM (Branch_Key, Branch_Name, Repo_Key) VALUES (?, ?) '''
+        self.cursor.execute(sql, branch_data)
         self.save()
 
     def insert_commit(self, commit):
-        commit_data = (commit['commit_key'], commit['commit_message'], commit['commit_hash'], commit['commit_time'],
-                       commit['commit_line_diff'], commit['commit_file_diff'], commit['user_key'], commit['repo_key'],
-                       commit['branch_key'])
-        sql = '''INSERT INTO COMMIT_FACT (Commit_Key, Commit_Message, Commit_Hash, Commit_Time, Commit_Line_Diff, 
-        Commit_File_Diff, User_Key, Repo_Key, Branch_Key) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) '''
+        commit_data = (commit['commit_message'], commit['commit_hash'], commit['commit_line_diff'],
+                       commit['commit_file_diff'], commit['user_key'], commit['repo_key'], commit['branch_key'],
+                       commit['date_key'])
+        sql = '''INSERT INTO COMMIT_FACT (Commit_Message, Commit_Hash, Commit_Line_Diff, 
+        Commit_File_Diff, User_Key, Repo_Key, Branch_Key, Date_Key) VALUES (?, ?, ?, ?, ?, ?, ?, ?) '''
         self.cursor.execute(sql, commit_data)
         self.save()

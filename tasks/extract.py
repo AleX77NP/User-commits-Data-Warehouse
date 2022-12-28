@@ -3,7 +3,7 @@ from data_handler import FakeCommitApi
 from couchdb_handle import CouchHandler
 
 
-@task(task_id='extract')
+@task(task_id="extract")
 def LoadToStaging():
     api = FakeCommitApi()
     ch = CouchHandler()

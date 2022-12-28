@@ -1,5 +1,4 @@
 import requests
-from datetime import datetime
 from random import randrange
 
 
@@ -80,7 +79,6 @@ class FakeCommitApi:
         commit = {
             'commit_message': commit_message,
             'commit_hash': commit_message.encode().hex()[0:40],
-            'commit_time': datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
             'commit_line_diff': randrange(1, 1000),
             'commit_file_diff': randrange(1, 15)
         }
