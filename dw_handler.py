@@ -16,12 +16,12 @@ class DataWarehouseHandler:
 
     def insert_repo(self, repo):
         repo_data = (repo['repo_key'], repo['repo_name'], repo['repo_owner'], repo['repo_org'])
-        sql = ''' INSERT INTO REPO_DIM (Repo_Key, Repo_Name, Repo_Owner, RepoOrg) VALUES (?, ?, ?, ?) '''
+        sql = ''' INSERT INTO REPO_DIM (Repo_Key, Repo_Name, Repo_Owner, Repo_Org) VALUES (?, ?, ?, ?) '''
         self.cursor.execute(sql, repo_data)
 
     def insert_branch(self, branch):
         branch_data = (branch['branch_key'], branch['branch_name'])
-        sql = ''' INSERT INTO BRANCH_DIM (Branch_Key, Branch_Name, Repo_Key) VALUES (?, ?) '''
+        sql = ''' INSERT INTO BRANCH_DIM (Branch_Key, Branch_Name) VALUES (?, ?) '''
         self.cursor.execute(sql, branch_data)
 
     def insert_date(self, date):

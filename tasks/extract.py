@@ -1,6 +1,9 @@
 from airflow.decorators import task
 from data_handler import FakeCommitApi
 from couchdb_handle import CouchHandler
+import os
+
+os.environ["no_proxy"] = "*"
 
 
 @task(task_id="extract")

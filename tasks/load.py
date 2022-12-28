@@ -3,6 +3,7 @@ from couchdb_handle import CouchHandler
 from dw_handler import DataWarehouseHandler
 from datetime import datetime
 import uuid
+import traceback
 
 
 @task(task_id="load")
@@ -40,7 +41,7 @@ def LoadToDW():
             branch_data = commit_doc.get('branch')
             branch = {
                 'branch_key': branch_key,
-                'branch_name': branch_data.get('branch_name')
+                'branch_name': branch_data
             }
 
             # date
@@ -73,3 +74,7 @@ def LoadToDW():
         except BaseException as e:
             print("ERROR: ", e)
             print("COMMIT_DATA", commit_doc)
+            print(traceback.format_exc())
+
+
+LoadToDW()

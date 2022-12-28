@@ -27,7 +27,7 @@ repo_dim_table = """ CREATE TABLE REPO_DIM (
 
 branch_dim_table = """ CREATE TABLE BRANCH_DIM (
                    Branch_Key CHAR(20) PRIMARY KEY NOT NULL,
-                   Branch_Name VARCHAR(20) UNIQUE NOT NULL,
+                   Branch_Name VARCHAR(20) NOT NULL,
                    Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
             ); """
 
