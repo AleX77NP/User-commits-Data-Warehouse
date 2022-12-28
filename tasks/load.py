@@ -75,6 +75,3 @@ def LoadToDW():
             print("ERROR: ", e)
             print("COMMIT_DATA", commit_doc)
             print(traceback.format_exc())
-
-
-LoadToDW()
