@@ -50,10 +50,10 @@ commit_fact_table = """ CREATE TABLE COMMIT_FACT (
                         Branch_Key CHAR(20) NOT NULL,
                         Date_Key CHAR(20) NOT NULL,
                         PRIMARY KEY (User_Key, Repo_Key, Branch_Key, Date_Key),
-                        FOREIGN KEY(User_key) REFERENCES USER_DIM(User_Key),
-                        FOREIGN KEY(Repo_key) REFERENCES REPO_DIM(Repo_Key),
-                        FOREIGN KEY(Branch_key) REFERENCES BRANCH_DIM(Branch_Key),
-                        FOREIGN KEY(Date_key) REFERENCES DATE_DIM(Date_Key)
+                        FOREIGN KEY(User_Key) REFERENCES USER_DIM(User_Key),
+                        FOREIGN KEY(Repo_Key) REFERENCES REPO_DIM(Repo_Key),
+                        FOREIGN KEY(Branch_Key) REFERENCES BRANCH_DIM(Branch_Key),
+                        FOREIGN KEY(Date_Key) REFERENCES DATE_DIM(Date_Key)
                     ); """
 
 cursor_obj.execute(user_dim_table)
