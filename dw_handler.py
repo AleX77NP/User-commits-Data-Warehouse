@@ -36,3 +36,6 @@ class DataWarehouseHandler:
         sql = '''INSERT INTO COMMIT_FACT (Commit_Message, Commit_Hash, Commit_Line_Diff, 
         Commit_File_Diff, User_Key, Repo_Key, Branch_Key, Date_Key) VALUES (?, ?, ?, ?, ?, ?, ?, ?) '''
         self.cursor.execute(sql, commit_data)
+
+    def __del__(self):
+        self.db.close()
