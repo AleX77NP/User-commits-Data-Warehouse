@@ -3,6 +3,8 @@ venv/
 logs/
 airflow.db
 airflow-webserver.pid
+airflow.cfg
+webserver_config.py
 git_activity.db
 helper.txt
 .idea
