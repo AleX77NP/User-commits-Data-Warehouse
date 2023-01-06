@@ -1,6 +1,8 @@
 # DESCRIPTION:
 Example of ETL pipeline implemented using Python and Airflow. FakeCommitApi generates
-fake data for users, repos, branches and user commits. Check Data Warehouse design - `images/DW_Schema.png`
+fake data for users, repos, branches and user commits. Check Data Warehouse design:
+
+<img src="https://github.com/AleX77NP/User-commits-Data-Warehouse/raw/main/images/DW_Schema.png">
 
 Pipeline consists of following tasks:
 
